@@ -24,7 +24,8 @@ class RAGPipeline:
 
         # Load the embedding model (you can change this as needed)
         self.embedding_model = HuggingFaceInferenceAPIEmbeddings(
-            api_key="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",
+            # "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",
+            api_key = "use your own",
             model_name="sentence-transformers/all-mpnet-base-v2"
         )
         # Load Whisper model for voice-to-text conversion
@@ -106,8 +107,8 @@ class RAGPipeline:
 # Example Usage
 if __name__ == "__main__":
     # TOGETHER_API_KEY = "your_together_ai_api_key"  # Replace with your actual API key
-
-    login("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")
+    # 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
+    login("use your own")
 
     rag = RAGPipeline()
 
