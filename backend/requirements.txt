@@ -1,0 +1,13 @@
+langchain==0.3.19
+langchain-community==0.3.18
+huggingface-hub==0.28.1
+langchain-huggingface
+langchain_openai
+langchain_core
+whisper
+openai-whisper
+pinecone
+pinecone[grpc]
+uvicorn
+fastapi
+python-multipart
