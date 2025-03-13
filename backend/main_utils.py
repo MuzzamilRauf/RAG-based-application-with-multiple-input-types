@@ -11,9 +11,10 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 
-os.environ["TOGETHER_API_KEY"] = "082e293b6aa70fe726d44fcc8e886bd9dfa542be221643c470e320ee75706f17"
-os.environ["PINECONE_API_KEY"] = "pcsk_4PGG2i_4NSfCD5Q6PsCs8bsjcRpjgsUUSVYsa4m2AGbTuvnPba8g182Fm9jGVHXgAyHtKn"
-
+# 082e293b6aa70fe726d44fcc8e886bd9dfa542be221643c470e320ee75706f17
+os.environ["TOGETHER_API_KEY"] = "use your own token"
+os.environ["PINECONE_API_KEY"] = "use your own token"
+# pcsk_4PGG2i_4NSfCD5Q6PsCs8bsjcRpjgsUUSVYsa4m2AGbTuvnPba8g182Fm9jGVHXgAyHtKn
 
 class RAGPipeline:
     def __init__(self):
