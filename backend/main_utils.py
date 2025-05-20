@@ -11,10 +11,10 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 
-# 082e293b6aa70fe726d44fcc8e886bd9dfa542be221643c470e320ee75706f17
-os.environ["TOGETHER_API_KEY"] = "use your own token"
-os.environ["PINECONE_API_KEY"] = "use your own token"
-# pcsk_4PGG2i_4NSfCD5Q6PsCs8bsjcRpjgsUUSVYsa4m2AGbTuvnPba8g182Fm9jGVHXgAyHtKn
+#
+os.environ["TOGETHER_API_KEY"] = "082e293b6aa70fe726d44fcc8e886bd9dfa542be221643c470e320ee75706f17"
+os.environ["PINECONE_API_KEY"] = "pcsk_4PGG2i_4NSfCD5Q6PsCs8bsjcRpjgsUUSVYsa4m2AGbTuvnPba8g182Fm9jGVHXgAyHtKn"
+#
 
 class RAGPipeline:
     def __init__(self):
@@ -26,7 +26,7 @@ class RAGPipeline:
             max_tokens=1000  # Increased to ensure room for detailed responses
         )
         self.embedding_model = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-        self.whisper_model = whisper.load_model("small")
+        self.whisper_model = whisper.load_model("tiny")
         self.pinecone = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
         self.index_name = "dense-index"
         self.index = self.initialize_pinecone()
@@ -175,10 +175,10 @@ class RAGPipeline:
         return response_content
 
 
-if __name__ == "__main__":
-    rag_obj = RAGPipeline()
-    text_input = "Give me the introduction about research paper."
-    pdf_input = "PDF_Data/research paper.pdf"
-    image_input = "Input_Images/English_PDF_Question.JPG"
-    print("Processing Given Input:")
-    print(rag_obj.retrieve_and_generate_response("text", text_input))
+# if __name__ == "__main__":
+#     rag_obj = RAGPipeline()
+#     text_input = "summarize the Law 4, tell me what is the main story of this Law."
+#     pdf_input = "PDF_Data/The-48-Laws-Of-Power.pdf"
+#     image_input = "Input_Images/English_PDF_Question.JPG"
+#     print("Processing Given Input:")
+#     print(rag_obj.retrieve_and_generate_response("text", text_input))
